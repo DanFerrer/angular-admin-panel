@@ -24,12 +24,8 @@ module.exports = {
             },
             {
             	test: /\.js$/,
-            	loader: "babel",
-            	exclude: /node_modules/,
-            	query: {
-            		presets: ['es2015'],
-                    cacheDirectory: true
-                }
+            	loaders: ['ng-annotate', 'babel?presets[]=es2015&cacheDirectory=true'],
+            	exclude: /node_modules/
             }
         ]
     }
