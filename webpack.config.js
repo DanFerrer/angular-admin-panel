@@ -10,8 +10,27 @@ module.exports = {
     },
     module: {
         loaders: [
-            {test: /\.scss$/, loaders: ['style', 'css', 'sass']},
-            {test: /\.js$/, loader: "babel", exclude: /node_modules/}
+           {
+            	test: /\.html$/,
+            	loader: 'ngtemplate?relativeTo=' + (path.resolve(__dirname)) + '/app/!html'
+            },
+            {
+           		test: /\.scss$/,
+            	loaders: ['style', 'css', 'sass']
+            },
+            {
+            	test: /\.css$/,
+            	loaders: ['style', 'css']
+            },
+            {
+            	test: /\.js$/,
+            	loader: "babel",
+            	exclude: /node_modules/,
+            	query: {
+            		presets: ['es2015'],
+                    cacheDirectory: true
+                }
+            }
         ]
     }
 };
