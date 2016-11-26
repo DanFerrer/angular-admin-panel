@@ -1,5 +1,6 @@
-// import webpack from 'webpack';
-import path from 'path';
+const path = require('path');
+
+require('dotenv').config();
 
 module.exports = {
     devtool: 'source-map',
@@ -10,13 +11,9 @@ module.exports = {
     },
     module: {
         loaders: [
-           {
+        	 {
             	test: /\.html$/,
-            	loader: 'ngtemplate?relativeTo=' + (path.resolve(__dirname)) + '/app/!html'
-            },
-            {
-           		test: /\.scss$/,
-            	loaders: ['style', 'css', 'sass']
+            	loader: 'html'
             },
             {
             	test: /\.css$/,
@@ -26,7 +23,27 @@ module.exports = {
             	test: /\.js$/,
             	loaders: ['ng-annotate', 'babel?presets[]=es2015&cacheDirectory=true'],
             	exclude: /node_modules/
-            }
+            },
+            {
+      			test: /\.woff(\?v=\d+\.\d+\.\d+)?$/,
+      			loader: "url?limit=10000&mimetype=application/font-woff"
+    		},
+    		{
+      			test: /\.woff2(\?v=\d+\.\d+\.\d+)?$/,
+     			loader: "url?limit=10000&mimetype=application/font-woff"
+    		},
+    		{
+      			test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
+      			loader: "url?limit=10000&mimetype=application/octet-stream"
+    		},
+    		{
+      			test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
+      			loader: "file"
+    		},
+    		{
+      			test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
+      			loader: "url?limit=10000&mimetype=image/svg+xml"
+    		}
         ]
     }
 };

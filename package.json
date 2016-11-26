@@ -1,10 +1,11 @@
 {
   "name": "angular-admin-panel",
   "version": "1.0.0",
-  "description": "",
+  "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos fugit earum ut eligendi corporis inventore, cupiditate perferendis placeat voluptatem deleniti quisquam vero ea nemo asperiores voluptatum illum ipsa cumque laudantium.",
   "main": "app/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node node_modules/webpack-dev-server/bin/webpack-dev-server.js",
+    "build": "node node_modules/webpack/bin/webpack.js"
   },
   "repository": {
     "type": "git",
@@ -27,18 +28,21 @@
     "babel-loader": "^6.2.8",
     "babel-preset-es2015": "^6.18.0",
     "css-loader": "^0.26.0",
+    "file-loader": "^0.9.0",
     "html-loader": "^0.4.4",
     "ng-annotate-loader": "^0.2.0",
     "ngtemplate-loader": "^1.3.1",
     "node-sass": "^3.13.0",
     "sass-loader": "^4.0.2",
     "style-loader": "^0.13.1",
+    "url-loader": "^0.5.7",
     "webpack": "^1.13.3",
     "webpack-dev-server": "^1.16.2",
     "webpack-stream": "^3.2.0"
   },
   "dependencies": {
     "angular": "^1.5.8",
-    "angular-ui-router": "^0.3.2"
+    "angular-ui-router": "^0.3.2",
+    "dotenv": "^2.0.0"
   }
 }

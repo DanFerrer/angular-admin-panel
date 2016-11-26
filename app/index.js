@@ -1,4 +1,7 @@
 import App from './app';
 import angular from 'angular';
 
-angular.bootstrap(document, [App]);
+angular.element(document).ready(() => {
+	angular.bootstrap(document, [App], {strictDI: true});
+});
+

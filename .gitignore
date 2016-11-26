@@ -50,3 +50,6 @@ jspm_packages
 
 # Yarn Integrity file
 .yarn-integrity
+
+# File for API creds
+.env
