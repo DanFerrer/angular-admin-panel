@@ -1,5 +1,7 @@
 # Created by https://www.gitignore.io/api/node
 
+
+# Output files
 dist
 
 ### Node ###
