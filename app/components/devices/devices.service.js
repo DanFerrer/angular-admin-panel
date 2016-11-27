@@ -1,7 +1,7 @@
 import { API_BASE_URL } from './constants.js';
 
 class DeviceService {
-	constructor($http, ApiMiddleware) {
+	constructor($http) {
 		"ngInject;"
 		this.$http = $http;
 	}
