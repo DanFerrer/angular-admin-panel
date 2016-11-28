@@ -24,8 +24,7 @@ gulp.task('lint', () => {
 gulp.task('build', ['lint'], () => {
 	return gulp.src(paths.entry)
 		.pipe(webpack(require('./webpack.config')))
-		.pipe(gulp.dest(paths.dest))
-		.pipe(server.reload({stream: true}));
+		.pipe(gulp.dest(paths.dest));
 });
 
 gulp.task('serve', () => {
@@ -39,13 +38,12 @@ gulp.task('serve', () => {
 
 gulp.task('copy', () => {
 	return gulp.src(paths.copy)
-		.pipe(gulp.dest(paths.dest))
-		.pipe(server.reload({stream: true}));
+		.pipe(gulp.dest(paths.dest));
 });
 
 gulp.task('watch', () => {
-	gulp.watch(paths.app, ['build']);
-	gulp.watch(paths.copy, ['copy']);
+	gulp.watch(paths.app, ['build', server.reload]);
+	gulp.watch(paths.copy, ['copy', server.reload]);
 });
 
 gulp.task('default', (callback) => {
