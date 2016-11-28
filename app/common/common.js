@@ -1,6 +1,8 @@
 import angular from 'angular';
-// import Nav from './nav/nav';
 
-const common = angular.module('app.common', []).name;
+import sidenav from './sidenav/sidenav';
+import toolbar from './toolbar/toolbar';
+
+const common = angular.module('app.common', [sidenav, toolbar]).name;
 
 export default common;

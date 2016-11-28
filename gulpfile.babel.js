@@ -3,6 +3,9 @@ import eslint from 'gulp-eslint';
 import runSequence from 'run-sequence';
 import webpack from 'webpack-stream';
 import server from 'browser-sync';
+import dotenv from 'dotenv';
+
+dotenv.load();
 
 const base = 'app';
 

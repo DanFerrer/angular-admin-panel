@@ -9,6 +9,7 @@
         "sourceType": "module"
     },
     "rules": {
+    	"no-debugger": 1,
         "indent": [
             "error",
             "tab"

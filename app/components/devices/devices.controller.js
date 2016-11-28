@@ -1,14 +1,13 @@
-// import DevicesService from './devices.service';
+class DevicesController {
+	constructor (DevicesService) {
+		'ngInject';
+		this.devicesService = DevicesService;
+		this.devices = [];
+	}
 
-// class DevicesController {
-// 	constructor (DevicesService) {
-// 		'ngInject;'
-// 		this.devicesService = DevicesService;
-// 	}
+	$onInit() {
+		this.devicesService.fetchDevices().then((response) => this.devices = response);
+	}
+}
 
-// 	$onInit() {
-
-// 	}
-// };
-
-// export default DevicesController;
+export default DevicesController;

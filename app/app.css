@@ -1,3 +1,7 @@
 .app {
 	color: blue;
 }
+
+[ng-cloak] {
+  display: none;
+}

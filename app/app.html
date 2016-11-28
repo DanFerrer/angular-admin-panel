@@ -1,4 +1,10 @@
-<div class="app">
-	21 21 21 21 21
-  <div ui-view></div>
+<div>
+	<toolbar></toolbar>
+	<div flex layout="row">
+		<sidenav></sidenav>
+		<md-content flex id="content">
+			<device></device>
+			<div ui-view></div>
+		</md-content>
+	</div>
 </div>

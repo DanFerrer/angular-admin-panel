@@ -2,7 +2,7 @@ import { API_BASE_URL } from './constants.js';
 
 class ReadingsService {
 	constructor($http) {
-		'ngInject;';
+		'ngInject';
 		this.$http = $http;
 	}
 

@@ -1,5 +1,3 @@
-require('dotenv').config();
-
 module.exports = {
 	devtool: 'source-map',
 	output: {

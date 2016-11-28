@@ -1,16 +1,25 @@
 import angular from 'angular';
 import uiRouter from 'angular-ui-router';
 
+import 'angular-animate';
+import 'angular-aria';
+import 'angular-material';
+
 import './app.css';
-import 'materialize-css/node_modules/jquery/dist/jquery.js';
 import 'font-awesome/css/font-awesome.css';
-import 'materialize-css/bin/materialize.css';
-import 'materialize-css/bin/materialize.js';
+import 'angular-material/angular-material.css';
 
 import AppComponent from './app.component';
 import Components from './components/components';
 import Common from './common/common';
+import { config } from './config';
 
-const app = angular.module('app', [Components, Common, uiRouter]).component('app', AppComponent).name;
+const app = angular.module('app', [
+	Components,
+	Common,
+	uiRouter,
+	'ngMaterial'])
+	.config(config)
+	.component('app', AppComponent).name;
 
 export default app;

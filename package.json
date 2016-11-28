@@ -40,15 +40,16 @@
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",
     "webpack": "^1.13.3",
-    "webpack-dev-server": "^1.16.2",
     "webpack-stream": "^3.2.0"
   },
   "dependencies": {
     "angular": "^1.5.8",
+    "angular-animate": "^1.5.9",
+    "angular-aria": "^1.5.9",
+    "angular-material": "^1.1.1",
+    "angular-messages": "^1.5.9",
     "angular-ui-router": "^0.3.2",
     "dotenv": "^2.0.0",
-    "font-awesome": "^4.7.0",
-    "jquery": "^3.1.1",
-    "materialize-css": "^0.97.8"
+    "font-awesome": "^4.7.0"
   }
 }
