@@ -1,8 +1,8 @@
-import template from './app.html'
+import template from './app.html';
 
 const AppComponent = {
-    template,
-    restrict: 'E'
+	template,
+	restrict: 'E'
 };
 
 export default AppComponent;

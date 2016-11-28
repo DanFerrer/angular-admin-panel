@@ -1,13 +1,9 @@
-const path = require('path');
-
 require('dotenv').config();
 
 module.exports = {
     devtool: 'source-map',
-    entry: './app/index.js',
     output: {
-            path: path.join(__dirname, 'dist'),
-            filename: 'bundle.js'
+    	filename: 'bundle.js'
     },
     module: {
         loaders: [
@@ -21,7 +17,7 @@ module.exports = {
             },
             {
             	test: /\.js$/,
-            	loaders: ['ng-annotate', 'babel?presets[]=es2015&cacheDirectory=true'],
+            	loaders: ['ng-annotate', 'babel'],
             	exclude: /node_modules/
             },
             {

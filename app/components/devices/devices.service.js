@@ -1,8 +1,9 @@
 import { API_BASE_URL } from './constants.js';
 
-class DeviceService {
+class DevicesService {
 	constructor($http) {
-		"ngInject;"
+		'ngInject;';
+
 		this.$http = $http;
 	}
 
@@ -25,6 +26,6 @@ class DeviceService {
 	deleteDevice(id) {
 		return this.$http.delete(`${API_BASE_URL}/devices/${id}`).then((response) => response.data);
 	}
-};
+}
 
-export default DeviceService;
+export default DevicesService;
