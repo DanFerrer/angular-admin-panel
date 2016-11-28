@@ -46,6 +46,8 @@
   "dependencies": {
     "angular": "^1.5.8",
     "angular-ui-router": "^0.3.2",
-    "dotenv": "^2.0.0"
+    "dotenv": "^2.0.0",
+    "font-awesome": "^4.7.0",
+    "materialize-css": "^0.97.8"
   }
 }
