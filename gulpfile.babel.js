@@ -42,8 +42,8 @@ gulp.task('copy', () => {
 
 gulp.task('watch', () => {
 	livereload.listen();
-	gulp.watch(paths.app, ['build']);
-	gulp.watch(paths.copy, ['copy']);
+	gulp.watch(paths.app, ['build', livereload]);
+	gulp.watch(paths.copy, ['copy', livereload]);
 });
 
 gulp.task('default', (done) => {
