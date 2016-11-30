@@ -46,7 +46,7 @@ router.post('/devices/:id', (req, res) => {
 	let options = {
 		uri: `${url}/devices`,
 		qs: {name: req.params.id},
-		method: 'POST',
+		method: 'POST'
 	};
 
 	request(options, (error) => {
@@ -72,9 +72,8 @@ router.post('/readings', (req, res) => {
 		qs: {
 			type: req.body.type,
 			value: req.body.value,
-
 		},
-		method: 'POST',
+		method: 'POST'
 	};
 
 	request(options, (error) => {
