@@ -1,17 +1,15 @@
 import gulp from 'gulp';
 import eslint from 'gulp-eslint';
+import nodemon from 'gulp-nodemon';
+import livereload from 'gulp-livereload';
 import runSequence from 'run-sequence';
 import webpack from 'webpack-stream';
-import server from 'browser-sync';
-import dotenv from 'dotenv';
-
-dotenv.load();
 
 const base = 'app';
 
 const paths = {
-	entry: `${base}/index.js`,
-	app: `${base}/**/*`,
+	entry: `${base}/client/index.js`,
+	app: `${base}/client/**/*`,
 	copy: 'index.html',
 	dest: 'dist',
 	js: `${base}/**/*.js`
@@ -30,12 +28,10 @@ gulp.task('build', ['lint'], () => {
 		.pipe(gulp.dest(paths.dest));
 });
 
-gulp.task('serve', () => {
-	server({
-		port: 4000,
-		server: {
-			baseDir: paths.dest
-		}
+gulp.task('server', () => {
+	nodemon({
+		script: `${base}/server/server.js`,
+		ignore: paths.app
 	});
 });
 
@@ -45,11 +41,12 @@ gulp.task('copy', () => {
 });
 
 gulp.task('watch', () => {
-	gulp.watch(paths.app, ['build', server.reload]);
-	gulp.watch(paths.copy, ['copy', server.reload]);
+	livereload.listen();
+	gulp.watch(paths.app, ['build']);
+	gulp.watch(paths.copy, ['copy']);
 });
 
-gulp.task('default', (callback) => {
-	runSequence('build', 'copy', 'serve', 'watch', callback);
+gulp.task('default', (done) => {
+	runSequence('build', 'copy', 'server', 'watch', done);
 });
 

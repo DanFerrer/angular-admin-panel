@@ -10,6 +10,7 @@
     },
     "rules": {
     	"no-debugger": 1,
+    	"no-console": 1,
         "indent": [
             "error",
             "tab"
