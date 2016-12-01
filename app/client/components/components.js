@@ -1,9 +1,6 @@
 import angular from 'angular';
-import apiConstants from './constants';
-import Devices from './devices/devices';
+import Device from './device/device';
 // import Readings from './readings/readings';
-const components = angular.module('app.components', [Devices])
-	.constant('apiConstants', apiConstants)
-	.name;
+const components = angular.module('app.components', [Device]).name;
 
 export default components;

@@ -33,9 +33,12 @@ router.get('/devices/:id/readings', (req, res) => {
 router.post('/devices', (req, res) => {
 	let options = {
 		uri: `${url}/devices`,
-		qs: {name: req.body.name},
+		body: {name: req.body.name},
+		json: true,
 		method: 'POST',
 	};
+
+	console.log(options);
 
 	request(options, (error) => {
 		if (error) throw error;
@@ -45,8 +48,9 @@ router.post('/devices', (req, res) => {
 router.post('/devices/:id', (req, res) => {
 	let options = {
 		uri: `${url}/devices`,
-		qs: {name: req.params.id},
-		method: 'POST'
+		body: {name: req.params.id},
+		json: true,
+		method: 'DELETE'
 	};
 
 	request(options, (error) => {
@@ -69,10 +73,12 @@ router.get('/readings/:id', (req, res) => {
 router.post('/readings', (req, res) => {
 	let options = {
 		uri: `${url}/readings`,
-		qs: {
+		body: {
 			type: req.body.type,
 			value: req.body.value,
+			deviceId: req.body.deviceId
 		},
+		json: true,
 		method: 'POST'
 	};
 
